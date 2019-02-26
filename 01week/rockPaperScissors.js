@@ -11,10 +11,7 @@ const rl = readline.createInterface({
 function rockPaperScissors(hand1, hand2) {
   let p1 = hand1.toLowerCase()
   let p2 = hand2.toLowerCase()
-//check if tie
-// condense possible hand1 victories
-
-
+  
   if(p1 === p2){
     return "It's a tie..."
   }
@@ -27,43 +24,6 @@ function rockPaperScissors(hand1, hand2) {
   else{
     return "Please check your spelling"
   }
-  // if(p1 === "rock"){
-  //   if(p2 === "paper"){
-  //     return ("Hand2 Wins!!!")
-  //   }
-  //   else if(p2 === "scissors"){
-  //     return ("")
-  //   }
-  //   else{
-  //     return "Please check your spelling"
-  //   }
-  // }
-  // else if(p1 === "paper"){
-  //   if(p2 === "rock"){
-  //     return ("Hand1 Wins!!!")
-  //   }
-  //   else if(p2 === "scissors"){
-  //     return ("Hand2 Wins!!!")
-  //   }
-  //   else{
-  //     return "Please check your spelling"
-  //   }
-  // }
-  // else if(p1 === "scissors"){
-  //   if(p2 === "rock"){
-  //     return ("Hand2 Wins!!!")
-  //   }
-  //   else if(p2 === "paper"){
-  //     return ("Hand1 Wins!!!")
-  //   }
-  //   else{
-  //     return "Please check your spelling"
-  //   }
-  // }
-  // else{
-  //   return "Please check your spelling"
-  // }
-
 }
 
 function getPrompt() {
