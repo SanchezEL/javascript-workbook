@@ -12,6 +12,32 @@ function pigLatin(word) {
 
   // Your code here
 
+
+  let vowels = ['a','e','i','o','u']
+  const isVowel = (cha) => {
+    for(let i = 0; i < vowels.length; i++){
+      if(cha === vowels[i]){
+        return true
+      }
+    }
+    return false
+  }
+  var wordLower = word.trim().toLowerCase();
+  var wordArr = wordLower.split("");
+  let bool = true;
+  let x = 0;
+  while(!(isVowel(wordArr[x]))){
+    // console.log(x) 
+    wordArr.push(wordArr.shift())
+    // console.log(midArr)
+    bool = false;
+  }
+  // var pigWord = wordArr.concat(midArr)
+  if(bool){
+    wordArr = wordArr.concat('y')
+  }
+  wordArr = wordArr.concat('ay')
+  return wordArr.join("")
 }
 
 
