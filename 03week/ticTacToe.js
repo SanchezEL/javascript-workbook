@@ -25,22 +25,90 @@ function printBoard() {
 
 function horizontalWin() {
   // Your code here
+  for(let i = 0; i < board.length; i++){
+    if(board[i][0] !== ' ' && board[i][0] === board[i][1] && board[i][0] === board[i][2] &&  board[i][1] === board[i][2]){
+      return true;
+    }
+  }
+  return false
 }
 
 function verticalWin() {
   // Your code here
+  for(let i = 0; i < board.length; i++){
+    if(board[0][i] !== ' ' && board[0][i] === board[1][i] && board[0][i] === board[2][i] && board[1][i] === board[2][i]){
+      // console.log(board[0][i] === board[1][i])
+      return true;
+    }
+  }
+  return false;
 }
 
 function diagonalWin() {
   // Your code here
+  if((board[0][0] !== ' ' && board[0][0] === board[1][1] && board[0][0] === board[2][2] && board[1][1] === board[2][2]) || 
+      (board[0][2] !== ' ' && board[0][2] === board[1][1] && board[0][2] === board[2][0] && board[1][1] === board[2][0])){
+        return true;
+      }
+  return false;
 }
 
 function checkForWin() {
   // Your code here
+  if(horizontalWin() || verticalWin() || diagonalWin()){
+    // console.log(verticalWin())
+    printBoard();
+    console.log(playerTurn + " WINS")
+    board = [
+      [' ', ' ', ' '],
+      [' ', ' ', ' '],
+      [' ', ' ', ' ']
+    ];
+    if(playerTurn === 'X'){
+      playerTurn = 'O'
+    }
+    return true;
+  }
+  return false
+}
+function checkForTie() {
+  if(board[0][0] !== ' ' && board[0][1] !== ' ' && board[0][2] !== ' ' &&
+  board[1][0] !== ' ' && board[1][1] !== ' ' && board[1][2] !== ' ' &&
+  board[2][0] !== ' ' && board[2][1] !== ' ' && board[2][2] !== ' '){
+    printBoard();
+    console.log("It's a tie...")
+    board = [
+      [' ', ' ', ' '],
+      [' ', ' ', ' '],
+      [' ', ' ', ' ']
+    ];
+    if(playerTurn === 'X'){
+      playerTurn = 'O'
+    }
+    return true;
+  }
+  return false;
 }
 
 function ticTacToe(row, column) {
   // Your code here
+  if(row < 3 && row > -1 && column < 3 && column > -1 && board[row][column] === ' ' ){
+    board[row][column] = playerTurn
+    console.log(board[row][column])
+    checkForWin();
+    checkForTie();
+    if(playerTurn === 'X'){
+      playerTurn = 'O'
+    }
+    else{
+      playerTurn = 'X';
+    }
+    
+  }
+  else{
+    console.log("N O T  A  V A L I D  M O V E")
+  }
+
 }
 
 function getPrompt() {
