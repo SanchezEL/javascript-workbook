@@ -51,6 +51,7 @@ function generateHint(guess) {
       numCorrect++;
     }
   }
+  numCorrect -= numInPlace;
   // console.log(solArr)
   console.log((numInPlace.toString() + " in Place").red + '-'+ (numCorrect.toString() + " correct").white)
   
@@ -125,7 +126,7 @@ if (typeof describe === 'function') {
       assert.equal(generateHint('abdc'), '2-2');
     });
     it('should generate hints if solution has duplicates', () => {
-      assert.equal(generateHint('aabb'), '1-1'); //is this really the tests expected output?
+      assert.equal(generateHint('aabb'), '1-1'); 
     });
 
   });
