@@ -2,6 +2,7 @@
 
 let assert = require('assert');
 
+
 let jobTypes = {
   pilot: 'MAV',
   mechanic: 'Repair Ship',
@@ -10,6 +11,40 @@ let jobTypes = {
 };
 
 // Your code here
+
+//create class CrewMember
+//constructor with name, job, specialSkll, and maybe ship
+//create method to enter and ?leave ship?
+class Ship{
+  constructor(name, type, ability){
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = []
+  }
+  missionStatement(){
+    if(this.crew.length === 0){
+      return "Can't perform a mission yet."
+    }
+    else{
+      return this.ability;
+    }
+  }
+}
+class CrewMember{
+  constructor(name, job, specialSkill, ship){
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = ship;
+  }
+  enterShip(ship){
+    //push crew member to ship
+    console.log(this)
+    this.ship = ship;
+    ship.crew.push(this)
+  }
+}
 
 //tests
 if (typeof describe === 'function'){
