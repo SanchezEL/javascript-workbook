@@ -121,7 +121,7 @@ class Board {
         if((i+j)%2 !== 0){
           this.grid[i][j] = new CheckerPiece('r')
           // this.checkers.push(this.grid[i][j])
-          console.log(this.checkers)
+          // console.log(this.checkers)
         }
       }
     }
@@ -130,7 +130,6 @@ class Board {
 
   // Your code here
 }
-//createCheckers()
 
 class Game {
   constructor() {
@@ -177,11 +176,13 @@ class Game {
       let mid = midNum.toString().split('')
       let midRow = mid[0]
       let midCol = mid[1]
+      grid[endRow][endCol] = grid[startRow][startCol]
       grid[startRow][startCol] = null
-
-      this.board.checkers.splice(this.board.checkers.indexOf(grid[midRow][midCol]), 1)
-      console.log(this.board.checkers, this.board.checkers.length)
       grid[midRow][midCol] = null
+      
+      // console.log(this.board.checkers.length)
+      this.board.checkers.splice(this.board.checkers.indexOf(grid[midRow][midCol]), 1)
+      // console.log(this.board.checkers.length, game.board.grid[5][2])
       this.board.grid = grid;
     } 
   
