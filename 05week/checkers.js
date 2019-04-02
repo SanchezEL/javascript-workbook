@@ -177,9 +177,7 @@ class Game {
       let mid = midNum.toString().split('')
       let midRow = mid[0]
       let midCol = mid[1]
-      // grid[endRow][endCol] = grid[startRow][startCol]
       grid[startRow][startCol] = null
-      // console.log(this.board.checkers, this.board.checkers.length)
 
       this.board.checkers.splice(this.board.checkers.indexOf(grid[midRow][midCol]), 1)
       console.log(this.board.checkers, this.board.checkers.length)
