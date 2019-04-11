@@ -7,14 +7,30 @@
   <title>Pokemon</title>
 </head>
 <body>
-  <p>Get at least two Pokémon and then hit compare!</p>
-  <button id="get1" onclick="getPokemon()">GET POKÉMON</button>
-  <br>
-  <!-- <button id="get2" onclick="getPokemon()">GET2</button> -->
-  <br>
-  <button id="compare" onclick="comparePokemon()">COMPARE</button>
-  <div id="output"></div>
-  <div id="pics"></div>
+  <div class="containerMain">
+      <p>Get at least two Pokémon and then hit compare!</p>
+      <br>
+    
+      <div class="container">
+        <div>
+            <button id="get1" onclick="getPokemon()">GET POKÉMON</button>
+        </div>
+      </div>
+      <div class="container">
+        <div>  
+          <button id="get2" onclick="getPokemon()">GET POKÉMON</button>
+        </div>
+      </div>
+      
+    
+      <br>
+      <!-- <button id="get2" onclick="getPokemon()">GET2</button> -->
+      <br>
+      <button id="compare" onclick="comparePokemon()">COMPARE</button>
+      <div id="output"></div>
+      <div id="pics"></div>
+  </div>
+  
 
   <script src="./script.js"></script>
 </body>

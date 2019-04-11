@@ -16,6 +16,7 @@ function getPokemon() {
     .then(function (data) {
       // console.log(data.species.name)
       pokemon.push(data)
+      document.getElementById('pics').innerHTML += `<img src = ${data.sprites.front_default}></img>`
       // return (data)
 
     })
