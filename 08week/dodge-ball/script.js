@@ -54,20 +54,20 @@ const listOfPlayers = []
 const blueTeam = []
 const redTeam = []
 
-class Player {
+class Player{
   constructor(person){
     this.person = person;
   }
 }
-class BlueTeammate {
+class BlueTeammate extends Player {
   constructor(player){
-    this.player = player
+    super(player.person)
     this.color = 'blue'
   }
 }
-class RedTeammate {
+class RedTeammate extends Player {
   constructor(player){
-    this.player = player
+    super(player.person)
     this.color = 'red'
   }
 }
@@ -108,11 +108,11 @@ const listPlayers = () => {
     const liPlay = document.createElement("li")
     const buttonBlue = document.createElement("button")
     buttonBlue.innerHTML = `Blue`
-    buttonBlue.addEventListener('click', function() {addBluePlayer(player.id)} )
+    buttonBlue.addEventListener('click', function() {addBluePlayer(player.person.id)} )
     liPlay.appendChild(buttonBlue)
     const buttonRed = document.createElement("button")
     buttonRed.innerHTML = `Red`
-    buttonRed.addEventListener('click', function() {addRedPlayer(player.id)} )
+    buttonRed.addEventListener('click', function() {addRedPlayer(player.person.id)} )
     liPlay.appendChild(buttonRed)
     liPlay.appendChild(document.createTextNode(player.person.name + " - " + player.person.placeBorn))
     listElementPlay.append(liPlay)
@@ -121,17 +121,12 @@ const listPlayers = () => {
 
 const addBluePlayer = (id) => {
   listOfPlayers.forEach(player => {
-    if(player.id === id){
+    if(player.person.id === id){
+      console.log('id of player', player.person.id)
       let bluePlayer = new BlueTeammate(player)
       console.log('blue', bluePlayer)
       blueTeam.push(bluePlayer)
-      // player.color = 'blue'
-      // console.log(player)
-      // console.log(listOfPlayers)
       listOfPlayers.splice(listOfPlayers.indexOf(player),1)
-      // console.log('list of players',listOfPlayers)
-      // console.log('blue team', blueTeam)
-      // listPeopleChoices()
       listPlayers()
       listBlueTeam()
     }
@@ -143,14 +138,14 @@ const listBlueTeam = () => {
   blueTeam.map(bluePlayer => {
     const listElementPlay = document.getElementById('blue')
     const liPlay = document.createElement("li")
-    let person = bluePlayer.player.person
+    let person = bluePlayer.person
     liPlay.appendChild(document.createTextNode(person.name + " - " + person.placeBorn))
     listElementPlay.append(liPlay)
   })
 }
 const addRedPlayer = (id) => {
   listOfPlayers.forEach(player => {
-    if(player.id === id){
+    if(player.person.id === id){
       let redPlayer = new RedTeammate(player)
       redTeam.push(redPlayer)
       // player.color = 'red'
@@ -171,7 +166,7 @@ const listRedTeam = () => {
   redTeam.map(redPlayer => {
     const listElementPlay = document.getElementById('red')
     const liPlay = document.createElement("li")
-    let person = redPlayer.player.person
+    let person = redPlayer.person
     liPlay.appendChild(document.createTextNode(person.name + " - " + person.placeBorn))
     listElementPlay.append(liPlay)
   })

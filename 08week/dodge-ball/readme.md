@@ -1,1 +1,9 @@
--
+-When 'Make Player' button is clicked create a new Player with the properties of the person clicked.
+-Push the new player to the listOfPlayers array
+-Use array.slice to remove the person from the list of people
+-Redisplay the list of people minus the clicked player.
+-Display the list of players which adds the player removed from the list of people
+  -This should also display two new buttons one that will create a red player when clicked and the other will create a blue player.
+-When added to a team it should push the player into the either the blueTeam or redTeam array.
+-Then use array.slice to remove the player from the available players list.
+-It should then redisplay the list of players and the players of whichever team they've been added to.
