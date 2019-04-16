@@ -1,6 +1,28 @@
-#blue{
+body{
+  background-image: url(http://1.bp.blogspot.com/-oKAaBS1G4Ng/UQB886Qk1EI/AAAAAAAAACQ/dCeDrQLDTvQ/s1600/04_3.gif);
+  /* background-image: url(http://coachestrainingroom.com/wp-content/uploads/2015/03/futsal_field_size.png); */
+  background-size: 100%
+}
+
+button{
+  margin: 5px;
+}
+.playerContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.playerContainer li{
+  list-style: none;
+}
+.teamContainer{
+ display: flex;
+ justify-content: space-around;
+ margin: 6px;
+}
+.blueContainer{
   color: blue;
 }
-#red{
+.redContainer{
   color: red;
 }
