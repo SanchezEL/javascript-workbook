@@ -71,9 +71,7 @@ const acceptableGuess = (guess) =>{
   else{
      allLettersLegal = false
   }
-  return allLettersLegal
-  
-  
+  return allLettersLegal  
 }
 
 function mastermind(guess) {

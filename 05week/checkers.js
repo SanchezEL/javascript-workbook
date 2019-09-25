@@ -59,7 +59,7 @@ function isJump(startPos, endPos, grid){
 class CheckerPiece{
   constructor(symbol){
     this.symbol = symbol;
-    console.log(this)
+    // console.log(this)
     game.board.checkers.push(this) //adds checker piece to checkers array in board
   }
 }

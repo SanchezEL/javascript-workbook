@@ -140,6 +140,10 @@ const listBlueTeam = () => {
     const liPlay = document.createElement("li")
     let person = bluePlayer.person
     liPlay.appendChild(document.createTextNode(person.name + " - " + person.placeBorn))
+    let button = document.createElement("button")
+    button.innerHTML = `Delet`
+    button.addEventListener('click', function() {deleteBlueTeamMember(bluePlayer)} )
+    liPlay.appendChild(button)
     listElementPlay.append(liPlay)
   })
 }
@@ -168,7 +172,28 @@ const listRedTeam = () => {
     const liPlay = document.createElement("li")
     let person = redPlayer.person
     liPlay.appendChild(document.createTextNode(person.name + " - " + person.placeBorn))
+    let button = document.createElement("button")
+    button.addEventListener('click', function() {deleteRedTeamMember(redPlayer)} )
+    button.innerHTML = `Delet`
+    liPlay.appendChild(button)
     listElementPlay.append(liPlay)
   })
 }
 
+const deleteBlueTeamMember = (player) => {
+  console.log("deleting", player)
+  let ahhh = blueTeam[blueTeam.indexOf(player)].person
+  console.log(ahhh)
+  arrOfPeople.push(ahhh)
+  blueTeam.splice(blueTeam.indexOf(player),1)
+  listBlueTeam()
+  listPeopleChoices()
+}
+const deleteRedTeamMember = (player) => {
+  let ahhh = redTeam[redTeam.indexOf(player)].person
+  console.log(ahhh)
+  arrOfPeople.push(ahhh)
+  redTeam.splice(redTeam.indexOf(player),1)
+  listRedTeam()
+  listPeopleChoices()
+}
